@@ -92,6 +92,9 @@ require("nixCatsUtils.lazyCat").setup(nixCats.pawsible({ "allPlugins", "start", 
 	-- NOTE: Yazi File Manager
 	{ import = "johsve-source.plugins.yazi" },
 
+	-- NOTE: Mini Cursorword
+	{ import = "johsve-source.plugins.mini-cursorword" },
+
 	-- NOTE: Mini Pairs
 	{ import = "johsve-source.plugins.mini-pairs" },
 
