@@ -25,10 +25,6 @@ return {
           require("yazi").yazi(nil, vim.fn.getcwd())
           end,
           },
-          { icon = " ", key = "y", desc = "Yazi (Recent Modified)", action = function()
-            require("yazi").yazi({ args = { "--sort=mtime", "--reverse" } }, vim.fn.getcwd())
-          end },
-
           { icon = " ", key = "g", desc = "Lazygit", action = function()
           require("snacks").lazygit.open({ cwd = vim.fn.getcwd() })
           end,
@@ -55,20 +51,20 @@ return {
 							icon = " ",
 							title = "Git Status",
 							cmd = [[
-                branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
-                [ -n "$branch" ] && echo "  Branch: $branch"
-                git_status=$(git status --porcelain 2>/dev/null)
-                staged=$(echo "$git_status" | grep -E "^[AMDR]" | wc -l)
-                unstaged=$(echo "$git_status" | grep -E "^.[MD]" | wc -l)
-                untracked=$(echo "$git_status" | grep "^??" | wc -l)
-                [ "$staged" -gt 0 ] && echo "  $staged staged"
-                [ "$unstaged" -gt 0 ] && echo "  $unstaged unstaged"
-                [ "$untracked" -gt 0 ] && echo "  $untracked untracked"
-                [ "$staged" -eq 0 ] && [ "$unstaged" -eq 0 ] && [ "$untracked" -eq 0 ] && echo "  Clean working tree!"
-              echo ""
-              echo "  Last commit:"
-              git log --oneline -1 2>/dev/null
-              ]],
+  branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+  [ -n "$branch" ] && echo "  Branch: $branch"
+  git_status=$(git status --porcelain 2>/dev/null)
+  staged=$(echo "$git_status" | grep -E "^[AMDR]" | wc -l)
+  unstaged=$(echo "$git_status" | grep -E "^.[MD]" | wc -l)
+  untracked=$(echo "$git_status" | grep "^??" | wc -l)
+  [ "$staged" -gt 0 ] && echo "  $staged staged"
+  [ "$unstaged" -gt 0 ] && echo "  $unstaged unstaged"
+  [ "$untracked" -gt 0 ] && echo "  $untracked untracked"
+  [ "$staged" -eq 0 ] && [ "$unstaged" -eq 0 ] && [ "$untracked" -eq 0 ] && echo "  Clean working tree!"
+  echo ""
+  echo "  Last commit:"
+  git log --oneline -1 2>/dev/null
+]],
 							height = 7,
 							gap = 2,
 						},
