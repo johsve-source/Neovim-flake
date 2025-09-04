@@ -53,6 +53,9 @@ require("nixCatsUtils.lazyCat").setup(nixCats.pawsible({ "allPlugins", "start", 
 	-- NOTE: load mini-icons including nvim-dev-icons
 	{ import = "johsve-source.plugins.mini-icons" },
 
+	-- NOTE: minimap over code with information
+	{ import = "johsve-source.plugins.mini.nvim" },
+
 	-- NOTE: animate cursor
 	{ import = "johsve-source.plugins.smear-cursor" },
 

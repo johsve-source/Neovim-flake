@@ -178,6 +178,7 @@
           # many plugins depend on these for proper icons rendering, e.g. which-key
           mini-icons
           mini-cursorword
+          mini-notify
           mini-pairs
         ];
       };
