@@ -50,6 +50,9 @@ require("nixCatsUtils.lazyCat").setup(nixCats.pawsible({ "allPlugins", "start", 
 	-- [ "bjarneo/nes.nvim" ]
 	{ "bjarneo/nes.nvim", opts = { styles = { transparency = true } } },
 
+	-- NOTE: I like watching primeagen
+	{ import = "johsve-source.plugins.vim-be-good" },
+
 	-- NOTE: load mini-icons including nvim-dev-icons
 	{ import = "johsve-source.plugins.mini-icons" },
 
